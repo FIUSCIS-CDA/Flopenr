@@ -15,17 +15,17 @@ end
 Flopenr myRegister(reset, clk, D, E, Q);
 
 initial begin
-reset=1;  #(CLK_PERIOD/2);  // To Falling Edge
-reset=0;D=0;E=0; #(CLK_PERIOD/4); // Middle of clk=0
+reset=1;  #(CLK_PERIOD/2);  // To Rising
+reset=0;D=1;E=0; #(CLK_PERIOD/4); // Middle of clk=1
 if (Q !== 0) begin
    $display("Error: Register changed on falling edge"); $stop;
 end
-#(CLK_PERIOD/2); // Middle of clk=1 
+#(CLK_PERIOD/2); // Middle of clk=0 
 if (Q !== 0) begin
    $display("Error: Register changed when disabled"); $stop;
 end
-#(CLK_PERIOD/4); // To Falling Edge
-E=1; #(CLK_PERIOD/4); // Middle of clk=0
+#(CLK_PERIOD/4); // To Risgn Edge
+E=1; #(CLK_PERIOD/4); // Middle of clk=1
 if (Q !== 0) begin
    $display("Error: Register changed on falling edge"); $stop;
 end
