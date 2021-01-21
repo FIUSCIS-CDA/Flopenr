@@ -100,49 +100,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 688 192 784 320)
-	(text "DESwitch" (rect 5 0 60 14)(font "Arial" (font_size 8)))
-	(text "inst1" (rect 8 113 30 130)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "reset" (rect 0 0 29 14)(font "Arial" (font_size 8)))
-		(text "reset" (rect 21 27 50 41)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "clk" (rect 0 0 15 14)(font "Arial" (font_size 8)))
-		(text "clk" (rect 21 43 36 57)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "D" (rect 0 0 8 14)(font "Arial" (font_size 8)))
-		(text "D" (rect 21 59 29 73)(font "Arial" (font_size 8)))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "E" (rect 0 0 7 14)(font "Arial" (font_size 8)))
-		(text "E" (rect 21 75 28 89)(font "Arial" (font_size 8)))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 96 32)
-		(output)
-		(text "Q" (rect 0 0 9 14)(font "Arial" (font_size 8)))
-		(text "Q" (rect 64 27 73 41)(font "Arial" (font_size 8)))
-		(line (pt 96 32)(pt 80 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 80 112))
-	)
-)
-(symbol
 	(rect 360 232 408 264)
 	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst2" (rect 3 21 25 38)(font "Intel Clear" ))
@@ -170,7 +127,50 @@ refer to the applicable agreement for further details.
 (symbol
 	(rect 472 192 568 320)
 	(text "DESwitch" (rect 5 0 60 14)(font "Arial" (font_size 8)))
-	(text "inst3" (rect 8 113 30 130)(font "Intel Clear" ))
+	(text "slave" (rect 8 113 33 130)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "reset" (rect 0 0 29 14)(font "Arial" (font_size 8)))
+		(text "reset" (rect 21 27 50 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clk" (rect 0 0 15 14)(font "Arial" (font_size 8)))
+		(text "clk" (rect 21 43 36 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "D" (rect 0 0 8 14)(font "Arial" (font_size 8)))
+		(text "D" (rect 21 59 29 73)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "E" (rect 0 0 7 14)(font "Arial" (font_size 8)))
+		(text "E" (rect 21 75 28 89)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 96 32)
+		(output)
+		(text "Q" (rect 0 0 9 14)(font "Arial" (font_size 8)))
+		(text "Q" (rect 64 27 73 41)(font "Arial" (font_size 8)))
+		(line (pt 96 32)(pt 80 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 80 112))
+	)
+)
+(symbol
+	(rect 688 192 784 320)
+	(text "DESwitch" (rect 5 0 60 14)(font "Arial" (font_size 8)))
+	(text "master" (rect 8 113 41 130)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -211,14 +211,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (connector
-	(pt 424 248)
-	(pt 424 240)
-)
-(connector
-	(pt 424 240)
-	(pt 472 240)
-)
-(connector
 	(pt 336 248)
 	(pt 336 184)
 )
@@ -239,32 +231,8 @@ refer to the applicable agreement for further details.
 	(pt 472 256)
 )
 (connector
-	(pt 568 224)
-	(pt 616 224)
-)
-(connector
-	(pt 616 256)
-	(pt 688 256)
-)
-(connector
-	(pt 784 224)
-	(pt 840 224)
-)
-(connector
-	(pt 840 224)
-	(pt 840 240)
-)
-(connector
-	(pt 840 240)
-	(pt 880 240)
-)
-(connector
 	(pt 296 472)
 	(pt 456 472)
-)
-(connector
-	(pt 616 224)
-	(pt 616 256)
 )
 (connector
 	(pt 672 128)
@@ -311,10 +279,6 @@ refer to the applicable agreement for further details.
 	(pt 360 248)
 )
 (connector
-	(pt 408 248)
-	(pt 424 248)
-)
-(connector
 	(pt 536 176)
 	(pt 640 176)
 )
@@ -341,6 +305,45 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 440 128)
 	(pt 672 128)
+)
+(connector
+	(text "slave_output" (rect 568 208 630 225)(font "Intel Clear" ))
+	(pt 568 224)
+	(pt 616 224)
+)
+(connector
+	(pt 616 256)
+	(pt 688 256)
+)
+(connector
+	(pt 616 224)
+	(pt 616 256)
+)
+(connector
+	(text "master_output" (rect 784 208 853 225)(font "Intel Clear" ))
+	(pt 784 224)
+	(pt 832 224)
+)
+(connector
+	(pt 880 240)
+	(pt 832 240)
+)
+(connector
+	(pt 832 240)
+	(pt 832 224)
+)
+(connector
+	(pt 424 248)
+	(pt 424 240)
+)
+(connector
+	(text "NOTclk" (rect 434 224 469 241)(font "Intel Clear" ))
+	(pt 424 240)
+	(pt 472 240)
+)
+(connector
+	(pt 408 248)
+	(pt 424 248)
 )
 (junction (pt 336 248))
 (junction (pt 456 440))
