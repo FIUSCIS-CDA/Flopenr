@@ -2,7 +2,7 @@
        Flopenr
 
 #### DEPENDENCIES
-       DESwitch, DSwitch
+       DESwitch
 
 #### INPUTS
 Name  | Size(Bits)
